@@ -33,7 +33,7 @@ const projects = [
     description:
       "Just My Random Project during my outside school activities, You can also check my YouTube Channer for more content :)",
     image: "img/kiminonawa.png",
-    technologies: ["YouTube"],
+    technologies: ["After Efects","YouTube"],
     projectLink: "https://youtu.be/sGTqxISlW2g?si=-OiP9lscqPOSqlI-",
   },
   {
