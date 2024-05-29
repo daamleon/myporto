@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Yanuar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles for the hamburger icon */
+      .hamburger {
+        flex-direction: column;
+        justify-content: space-around;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active div:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .mobile-nav {
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+
+      .gallery-page {
+        overflow: hidden;
+      }
+      /* @media (min-height: 1000px) {
+        .bungkus {
+          padding-top: 100px;
+        }
+      } */
+      @media (min-width: 1200px) {
+        iframe {
+          height: 650px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="gallery-page bg-gray-100 xl:flex xl:justify-between">
+    <!-- NavBar -->
+    <div
+      class="z-50 fixed xl:hidden w-full border-b p-5 bg-gray-100 border-gray-200"
+    >
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Adam Yanuar</h1>
+      <!-- Hamburger Menu -->
+      <div class="hamburger flex fixed top-6 right-6" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="bg-gray-100">
+      <div
+        class="w-1/4 bg-white p-8 border-r border-gray-200 fixed flex-col h-full flex justify-between hidden xl:flex"
+        id="sidebar"
+      >
+        <div>
+          <h1 class="text-4xl font-bold text-gray-900">Adam Yanuar</h1>
+          <nav class="mt-8 space-y-4">
+            <a
+              href="index.html#details-section"
+              class="block text-lg text-gray-500"
+              >About</a
+            >
+            <a href="projects.html" class="block text-lg text-gray-500"
+              >Projects</a
+            >
+            <a href="gallery.html" class="block text-lg font-bold text-gray-500"
+              >Gallery</a
+            >
+            <a href="contact.html" class="block text-lg text-gray-500"
+              >Contact</a
+            >
+          </nav>
+        </div>
+        <div class="mt-8 space-y-4">
+          <a
+            href="https://www.instagram.com/daamleon"
+            class="block text-lg text-gray-500"
+            target="_blank"
+            >Instagram</a
+          >
+          <a
+            href="https://youtube.com/@daamleon?si=O2pOnvUXH1MbtfQg"
+            class="block text-lg text-gray-500"
+            target="_blank"
+            >YouTube</a
+          >
+          <a
+            href="https://www.linkedin.com/in/damleon"
+            class="block text-lg text-gray-500"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- import photo -->
+    <div class="xl:w-3/4 flex justify center pt-24 xl:pt-0">
+      <iframe class="" src="photo.html" width="1920" height="900"></iframe>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div
+      class="mobile-nav hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center z-40"
+      id="mobileNav"
+    >
+      <nav class="space-y-4 text-center">
+        <a href="index.html#details-section" class="block text-lg text-gray-500"
+          >About</a
+        >
+        <a href="projects.html" class="block text-lg text-gray-500">Projects</a>
+        <a href="gallery.html" class="block text-lg font-bold text-gray-500"
+          >Gallery</a
+        >
+        <a href="contact.html" class="block text-lg text-gray-500">Contact</a>
+      </nav>
+    </div>
+  </body>
+  <script>
+    document.getElementById("hamburger").addEventListener("click", function () {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("sm:-translate-x-full");
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", function () {
+        // Toggle active class on hamburger icon
+        this.classList.toggle("active");
+
+        // Toggle visibility of mobile navigation
+        mobileNav.classList.toggle("hidden");
+      });
+    });
+  </script>
+</html>
